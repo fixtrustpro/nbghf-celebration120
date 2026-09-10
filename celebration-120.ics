@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Celebration 120//NBGHF Clearview//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:celebration-120-2026@blackgolfhof.org
+DTSTAMP:20260903T120000Z
+DTSTART;VALUE=DATE:20261002
+DTEND;VALUE=DATE:20261004
+SUMMARY:Celebration 120 - Clearview 80 and NBGHF 40
+LOCATION:Clearview Golf Course\, 8410 Lincoln St SE\, East Canton\, OH 4473
+ 0
+DESCRIPTION:The 80th anniversary of Clearview Golf Course and the 40th of t
+ he National Black Golf Hall of Fame.\n\nFri Oct 2\, 10:00 AM - Golf\, Roun
+ d 1\, Clearview GC\nFri Oct 2\, 7:00 PM - A Conversation with Clearview & 
+ the Hall\nSat Oct 3\, 9:00 AM - Golf\, Round 2\, Clearview GC\nSat Oct 3\,
+  7:00 PM - Closing Gala\, Pro Football Hall of Fame\, Canton\n\nRegister: 
+ https://in4pargolf.com/nbghf/register\nJohn Simpson 407.497.2233
+URL:https://in4pargolf.com/nbghf/register
+END:VEVENT
+END:VCALENDAR
