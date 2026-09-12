@@ -332,9 +332,7 @@ footer a{color:#E6CF95}
     <label for="w">What are you registering for</label>
     <select id="w" name="w">
       <option>Single Player — $1,200 one day</option>
-      <option>Single Player — both days, $2,400</option>
       <option>Foursome — $2,400 one day</option>
-      <option>Foursome — both days, $4,800</option>
       <option>Closing Gala seat — $150</option>
       <option>Closing Gala table of eight — $2,000</option>
       <option>Souvenir Journal — half page, $800</option>
@@ -641,7 +639,7 @@ img[alt^="Celebration 120"]{
 /* Stripe Payment Links, one per item. Sponsor tiers are deliberately absent:
    card fees on a $120,000 gift cost the Hall over $3,000, so those are invoiced. */
 (function(){
-  var PAY = {"Single Player — $1,200 one day": "https://buy.stripe.com/cNi9AT0BL5Usdow8Tv5ZC00", "Single Player — both days, $2,400": "https://buy.stripe.com/7sY6oH84d0A8esA2v75ZC01", "Foursome — $2,400 one day": "https://buy.stripe.com/4gM7sLfwFaaIcks0mZ5ZC02", "Foursome — both days, $4,800": "https://buy.stripe.com/9B614n98hfv2bgo9Xz5ZC03", "Closing Gala seat — $150": "https://buy.stripe.com/cNi28resB3Mk98g3zb5ZC04", "Closing Gala table of eight — $2,000": "https://buy.stripe.com/eVq9AT1FPgz67087Pr5ZC05", "Souvenir Journal — half page, $800": "https://buy.stripe.com/3cIeVdckt6Yw5W46Ln5ZC06", "Souvenir Journal — full page colour, $1,200": "https://buy.stripe.com/14A6oH4S196E98g3zb5ZC07", "Hole Sponsor — $2,400": "https://buy.stripe.com/aFacN5bgp2Ig3NW3zb5ZC08", "Ad and Hole Combo — $2,400": "https://buy.stripe.com/aFa6oHbgp0A884c4Df5ZC09", "Apparel: Hat — $35": "https://buy.stripe.com/fZuaEX7093MkbgoedP5ZC0a", "Apparel: Shirt — $75": "https://buy.stripe.com/4gMbJ17094Qo2JS0mZ5ZC0b", "Apparel: Hat and Shirt combo — $90": "https://buy.stripe.com/9B6dR9acl82A4S0fhT5ZC0c"};
+  var PAY = {"Single Player — $1,200 one day": "https://buy.stripe.com/cNi9AT0BL5Usdow8Tv5ZC00", "Foursome — $2,400 one day": "https://buy.stripe.com/4gM7sLfwFaaIcks0mZ5ZC02", "Closing Gala seat — $150": "https://buy.stripe.com/cNi28resB3Mk98g3zb5ZC04", "Closing Gala table of eight — $2,000": "https://buy.stripe.com/eVq9AT1FPgz67087Pr5ZC05", "Souvenir Journal — half page, $800": "https://buy.stripe.com/3cIeVdckt6Yw5W46Ln5ZC06", "Souvenir Journal — full page colour, $1,200": "https://buy.stripe.com/14A6oH4S196E98g3zb5ZC07", "Hole Sponsor — $2,400": "https://buy.stripe.com/aFacN5bgp2Ig3NW3zb5ZC08", "Ad and Hole Combo — $2,400": "https://buy.stripe.com/aFa6oHbgp0A884c4Df5ZC09", "Apparel: Hat — $35": "https://buy.stripe.com/fZuaEX7093MkbgoedP5ZC0a", "Apparel: Shirt — $75": "https://buy.stripe.com/4gMbJ17094Qo2JS0mZ5ZC0b", "Apparel: Hat and Shirt combo — $90": "https://buy.stripe.com/9B6dR9acl82A4S0fhT5ZC0c"};
   var sel=document.getElementById('w'), box=document.getElementById('paybox'),
       a=document.getElementById('paylink'), note=document.getElementById('paynote');
   if(!sel||!box) return;
