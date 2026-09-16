@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Register · Celebration 120</title>
-<meta name="description" content="Register for Celebration 120, October 2 and 3, 2026 at Historic Clearview Golf Course, East Canton, Ohio. Player entries, foursomes, gala seats, journal ads and sponsorships.">
+<meta name="description" content="Register for Celebration 120, October 2 and 3, 2026 at Historic Clearview Golf Course, East Canton, Ohio. Player entries, foursomes, closing dinner seats, journal ads and sponsorships.">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -230,10 +230,10 @@ footer a{color:#E6CF95}
       <p>One foursome with four swag bags. Both days $4,800, with eight swag bags.</p>
       <div class="pick"><a href="#form" data-opt="Foursome — $2,400 one day">Register a Foursome</a></div></div>
 
-    <div class="opt hot"><h3>Closing Gala</h3>
+    <div class="opt hot"><h3>Closing Dinner</h3>
       <div class="price">$150 <small>per seat</small></div>
       <p>Saturday at the Pro Football Hall of Fame. Table of eight, $2,000.</p>
-      <div class="pick"><a href="#form" data-opt="Closing Gala seat — $150">Reserve a Seat</a></div></div>
+      <div class="pick"><a href="#form" data-opt="Closing Dinner seat — $150">Reserve a Seat</a></div></div>
 
     <div class="opt"><h3>Souvenir Journal</h3>
       <div class="price">$800 <small>half page</small></div>
@@ -322,11 +322,12 @@ footer a{color:#E6CF95}
     </div>
 
     <label for="w">What are you registering for</label>
-    <select id="w" name="w">
+    <select id="w" name="w" required>
+      <option value="" selected disabled>Choose one</option>
+      <option>Closing Dinner seat — $150</option>
+      <option>Closing Dinner table of eight — $2,000</option>
       <option>Single Player — $1,200 one day</option>
       <option>Foursome — $2,400 one day</option>
-      <option>Closing Gala seat — $150</option>
-      <option>Closing Gala table of eight — $2,000</option>
       <option>Souvenir Journal — half page, $800</option>
       <option>Souvenir Journal — full page colour, $1,200</option>
       <option>Presenting Sponsor — $120,000</option>
@@ -404,7 +405,7 @@ footer a{color:#E6CF95}
 
   <div class="pays">
     <div class="pay"><h4>Card &amp; Apple Pay</h4><p>Choose what you are registering for above
-      and pay on the page. Secure checkout by Stripe. Best for entries, gala seats, ads and
+      and pay on the page. Secure checkout by Stripe. Best for entries, dinner seats, ads and
       apparel.</p></div>
     <div class="pay"><h4>Bank transfer</h4><p>Choose <b>US bank account</b> at checkout.
       Costs the Hall a few dollars instead of a percentage, so <b>more of your money reaches
@@ -471,10 +472,10 @@ footer a{color:#E6CF95}
   <h2>Everything else <span class="g">flows from here.</span></h2>
   <div class="more">
     <a href="https://auction.in4pargolf.com"><b>Silent Auction</b>
-      <span>Bidding opens September 8 and closes during the gala on October 3.</span></a>
+      <span>Bidding opens September 8 and closes during the Closing Dinner on October 3.</span></a>
     <a href="https://www.hilton.com/en/attend-my-event/nationalblackgolfhof/" target="_blank" rel="noopener"><b>Hotel &amp; Room Block</b><span>DoubleTree by Hilton Canton Downtown. Group rate, Oct 1&ndash;4.</span></a>
     <a href="index.html#event"><b>Weekend Schedule</b>
-      <span>Two days of golf, an evening in conversation, and the closing gala.</span></a>
+      <span>Two days of golf, an evening in conversation, and the Closing Dinner.</span></a>
     <a href="index.html#home"><b>The New Home</b>
       <span>John A. White Golf Course, Atlanta, and the 2027 Induction Weekend.</span></a>
     <a href="inductees.html"><b>The Inductee Record</b>
@@ -609,7 +610,7 @@ img[alt^="Celebration 120"]{
 /* Stripe Payment Links, one per item. Sponsor tiers are deliberately absent:
    card fees on a $120,000 gift cost the Hall over $3,000, so those are invoiced. */
 (function(){
-  var PAY = {"Single Player — $1,200 one day": "https://buy.stripe.com/cNi9AT0BL5Usdow8Tv5ZC00", "Foursome — $2,400 one day": "https://buy.stripe.com/4gM7sLfwFaaIcks0mZ5ZC02", "Closing Gala seat — $150": "https://buy.stripe.com/cNi28resB3Mk98g3zb5ZC04", "Closing Gala table of eight — $2,000": "https://buy.stripe.com/eVq9AT1FPgz67087Pr5ZC05", "Souvenir Journal — half page, $800": "https://buy.stripe.com/3cIeVdckt6Yw5W46Ln5ZC06", "Souvenir Journal — full page colour, $1,200": "https://buy.stripe.com/14A6oH4S196E98g3zb5ZC07", "Hole Sponsor — $2,400": "https://buy.stripe.com/aFacN5bgp2Ig3NW3zb5ZC08", "Ad and Hole Combo — $2,400": "https://buy.stripe.com/aFa6oHbgp0A884c4Df5ZC09", "Apparel: Hat — $35": "https://buy.stripe.com/fZuaEX7093MkbgoedP5ZC0a", "Apparel: Shirt — $75": "https://buy.stripe.com/4gMbJ17094Qo2JS0mZ5ZC0b", "Apparel: Hat and Shirt combo — $90": "https://buy.stripe.com/9B6dR9acl82A4S0fhT5ZC0c"};
+  var PAY = {"Single Player — $1,200 one day": "https://buy.stripe.com/cNi9AT0BL5Usdow8Tv5ZC00", "Foursome — $2,400 one day": "https://buy.stripe.com/4gM7sLfwFaaIcks0mZ5ZC02", "Closing Dinner seat — $150": "https://buy.stripe.com/cNi28resB3Mk98g3zb5ZC04", "Closing Dinner table of eight — $2,000": "https://buy.stripe.com/eVq9AT1FPgz67087Pr5ZC05", "Souvenir Journal — half page, $800": "https://buy.stripe.com/3cIeVdckt6Yw5W46Ln5ZC06", "Souvenir Journal — full page colour, $1,200": "https://buy.stripe.com/14A6oH4S196E98g3zb5ZC07", "Hole Sponsor — $2,400": "https://buy.stripe.com/aFacN5bgp2Ig3NW3zb5ZC08", "Ad and Hole Combo — $2,400": "https://buy.stripe.com/aFa6oHbgp0A884c4Df5ZC09", "Apparel: Hat — $35": "https://buy.stripe.com/fZuaEX7093MkbgoedP5ZC0a", "Apparel: Shirt — $75": "https://buy.stripe.com/4gMbJ17094Qo2JS0mZ5ZC0b", "Apparel: Hat and Shirt combo — $90": "https://buy.stripe.com/9B6dR9acl82A4S0fhT5ZC0c"};
   var sel=document.getElementById('w'), box=document.getElementById('paybox'),
       a=document.getElementById('paylink'), note=document.getElementById('paynote');
   if(!sel||!box) return;
