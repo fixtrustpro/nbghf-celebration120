@@ -310,7 +310,8 @@ footer a{color:#E6CF95}
   <p class="lead">One form. John Simpson confirms your place and sends payment instructions the
   same day. Players get a swag bag, and the Celebration 120 hat and shirt are on sale here too, so we need a size. Members of the Hall and of the LPGA take 50 percent off entries and journal ads.</p>
 
-  <form class="form" id="reg">
+  <form class="form" id="reg" method="post" action="https://auction.in4pargolf.com/event-register">
+    <div style="position:absolute;left:-9999px" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
     <div class="row">
       <div><label for="n">Full name</label><input id="n" name="n" required autocomplete="name"></div>
       <div><label for="o">Organisation <span style="text-transform:none;letter-spacing:0">(optional)</span></label><input id="o" name="o" autocomplete="organization"></div>
@@ -318,15 +319,6 @@ footer a{color:#E6CF95}
     <div class="row">
       <div><label for="e">Email</label><input id="e" name="e" type="email" required autocomplete="email"></div>
       <div><label for="p">Mobile</label><input id="p" name="p" type="tel" required autocomplete="tel"></div>
-    </div>
-    <div class="optin">
-      <input type="checkbox" id="sms" name="sms">
-      <label for="sms">Text me about Celebration 120. By ticking this and giving my mobile
-        number I agree to receive text messages from In4par Golf LLC about this event,
-        including registration confirmations, schedule updates and silent auction alerts.
-        Message frequency varies. Message and data rates may apply. Reply STOP to opt out or
-        HELP for help. See our <a href="sms-terms">Messaging Terms</a> and
-        <a href="privacy">Privacy Policy</a>.</label>
     </div>
 
     <label for="w">What are you registering for</label>
@@ -377,14 +369,14 @@ footer a{color:#E6CF95}
       each swag bag and each scorecard, and saves a round of phone calls the week of the event.
       Leave any of them blank if you have not filled the team yet.</p>
       <div class="pl"><p class="who">Player Two</p>
-        <div class="row"><div><label for="p2n">Name</label><input id="p2n"></div>
-        <div><label for="p2e">Email</label><input id="p2e" type="email"></div></div></div>
+        <div class="row"><div><label for="p2n">Name</label><input id="p2n" name="p2n"></div>
+        <div><label for="p2e">Email</label><input id="p2e" name="p2e" type="email"></div></div></div>
       <div class="pl"><p class="who">Player Three</p>
-        <div class="row"><div><label for="p3n">Name</label><input id="p3n"></div>
-        <div><label for="p3e">Email</label><input id="p3e" type="email"></div></div></div>
+        <div class="row"><div><label for="p3n">Name</label><input id="p3n" name="p3n"></div>
+        <div><label for="p3e">Email</label><input id="p3e" name="p3e" type="email"></div></div></div>
       <div class="pl"><p class="who">Player Four</p>
-        <div class="row"><div><label for="p4n">Name</label><input id="p4n"></div>
-        <div><label for="p4e">Email</label><input id="p4e" type="email"></div></div></div>
+        <div class="row"><div><label for="p4n">Name</label><input id="p4n" name="p4n"></div>
+        <div><label for="p4e">Email</label><input id="p4e" name="p4e" type="email"></div></div></div>
     </div>
 
     <div class="tot"><span class="lab">Your total</span><span class="amt" id="tot">&mdash;</span>
@@ -396,7 +388,7 @@ footer a{color:#E6CF95}
     </div>
 
 
-    <button class="send" type="submit">Send My Registration</button>
+    <button class="send" type="submit">Register and Continue to Payment</button>
     <p class="orcall">Or reach John Simpson directly &mdash;
       <a href="tel:+14074972233">407.497.2233</a> &nbsp;·&nbsp;
       <a href="mailto:jsimpson@blackgolfhof.org">jsimpson@blackgolfhof.org</a></p>
@@ -513,28 +505,6 @@ document.querySelectorAll('.pick a[data-opt]').forEach(function(a){
     setTimeout(function(){ document.getElementById('n').focus(); }, 420);
   });
 });
-/* No backend yet, so the form hands off to email with everything filled in.
-   Upgrade to a real endpoint once the Hall confirms where registrations should land. */
-document.getElementById('reg').addEventListener('submit',function(ev){
-  ev.preventDefault();
-  var v=function(id){ return (document.getElementById(id).value||'').trim(); };
-  var body =
-    'CELEBRATION 120 REGISTRATION\n\n'+
-    'Name: '+v('n')+'\n'+
-    'Organisation: '+v('o')+'\n'+
-    'Email: '+v('e')+'\n'+
-    'Mobile: '+v('p')+'\n'+'Texts OK: '+(document.getElementById('sms').checked ? 'YES, consented' : 'no')+'\n\n'+
-    'Registering for: '+v('w')+'\n'+
-    'How many: '+v('q')+'\n'+
-    'Shirt size: '+(v('sz')||'not given')+'\n'+
-    'Sizes for the group: '+(v('sz2')||'—')+'\n'+
-    'Discount code: '+(v('d')||'none')+'\n\n'+
-    'Players 2-4:\n'+'  2. '+(v('p2n')||'—')+'  '+(v('p2e')||'')+'\n'+'  3. '+(v('p3n')||'—')+'  '+(v('p3e')||'')+'\n'+'  4. '+(v('p4n')||'—')+'  '+(v('p4e')||'')+'\n\n'+'Notes:\n'+(v('m')||'—')+'\n';
-  window.location.href='mailto:jsimpson@blackgolfhof.org'+
-    '?cc=hello@in4pargolf.com'+
-    '&subject='+encodeURIComponent('Celebration 120 registration — '+v('n'))+
-    '&body='+encodeURIComponent(body);
-});
 </script>
 
 <style>
@@ -647,8 +617,8 @@ img[alt^="Celebration 120"]{
     var t=sel.options[sel.selectedIndex].text, url=PAY[t];
     if(url){
       a.href=url; box.classList.add('on');
-      note.textContent='Secure checkout by Stripe. Send the form first so John knows who you are, '
-        + 'then pay. Card, Apple Pay and bank transfer accepted.';
+      note.textContent='Press Register and Continue to Payment below. Secure checkout by Stripe. '
+        + 'Card, Apple Pay and bank transfer accepted.';
     } else { box.classList.remove('on'); }
   }
   sel.addEventListener('change', paint);
